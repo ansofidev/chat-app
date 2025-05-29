@@ -1,0 +1,52 @@
+.new-chat-container {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+
+  .toggle-btn {
+    background: #1976d2;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #1259a3;
+    }
+  }
+
+  .new-chat-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    input {
+      padding: 0.6rem 0.9rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+
+      &:focus {
+        border-color: #1976d2;
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background: #1259a3;
+      }
+    }
+  }
+}

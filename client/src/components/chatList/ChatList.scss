@@ -1,0 +1,192 @@
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .chat-list-header {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .chat-search-input {
+      font-size: 1rem;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      width: 100%;
+
+      &:focus {
+        border-color: #1976d2;
+        box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+      }
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+  }
+
+  .chat-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .chat-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      border-bottom: 1px solid #eee;
+      position: relative;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+
+      &.selected {
+        background: #e3f2fd;
+      }
+
+      .avatar {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background: #1976d2;
+        color: white;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        font-size: 1rem;
+        user-select: none;
+      }
+
+      .chat-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+
+        .chat-name {
+          font-weight: 600;
+          margin-bottom: 2px;
+          color: #222;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .chat-preview {
+          font-size: 0.85rem;
+          color: #555;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 220px;
+        }
+      }
+
+      .chat-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.25rem;
+        margin-left: 1rem;
+        flex-shrink: 0;
+
+        .chat-date {
+          font-size: 0.7rem;
+          color: #999;
+          white-space: nowrap;
+          user-select: none;
+        }
+
+        .menu-wrapper {
+          position: relative;
+
+          .menu-button {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            color: #555;
+            transition: background 0.2s ease;
+            border-radius: 4px;
+
+            &:hover {
+              background: #e0e0e0;
+            }
+          }
+
+          .menu-dropdown {
+            position: absolute;
+            top: 1.5rem;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.2s ease;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            will-change: opacity, transform;
+
+            &.closing {
+              opacity: 0;
+              transform: translateY(-4px);
+              pointer-events: none;
+            }
+
+            button {
+              padding: 0.6rem 1rem;
+              background: none;
+              border: none;
+              text-align: left;
+              font-size: 14px;
+              color: #333;
+              cursor: pointer;
+
+              &:hover {
+                background: #f7f7f7;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
