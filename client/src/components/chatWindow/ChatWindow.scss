@@ -4,6 +4,26 @@
   height: 100%;
   background: #fdfdfd;
 
+  .scroll-to-bottom {
+  position: absolute;
+  bottom: 85px;
+  right: 20px;
+  background: #1976d2;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+  z-index: 5;
+
+  &:hover {
+    background: #155a9c;
+  }
+}
+
   .chat-header {
     display: flex;
     align-items: center;

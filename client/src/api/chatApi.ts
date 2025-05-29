@@ -23,3 +23,8 @@ export const updateChat = async (id: string, firstName: string, lastName: string
 export const deleteChat = async (id: string): Promise<void> => {
   await API.delete(`/chats/${id}`);
 };
+
+export const getChatById = async (id: string): Promise<Chat> => {
+  const res = await API.get(`/chats/${id}`);
+  return res.data;
+};
