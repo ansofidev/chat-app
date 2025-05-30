@@ -2,7 +2,7 @@ import axios from "axios";
 import { Chat } from "../types";
 
 const API = axios.create({
-  baseURL: "http://https://chat-app-backend-qwq2.onrender.com",
+  baseURL: "https://chat-app-backend-qwq2.onrender.com/api",
 });
 
 export const getChats = async (): Promise<Chat[]> => {
