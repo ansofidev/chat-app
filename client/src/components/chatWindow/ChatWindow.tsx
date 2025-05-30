@@ -154,7 +154,7 @@ const ChatWindow: React.FC<Props> = ({ chat, showToast, onChatUpdate, onClose })
             setAutoScroll(true);
           }}
         >
-          ⬇ Нові повідомлення
+          ⬇
         </button>
       )}
 
