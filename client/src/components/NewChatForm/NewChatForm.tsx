@@ -45,7 +45,7 @@ const NewChatForm: React.FC<Props> = ({
       await onSaveEdit({ ...editingChat, firstName, lastName });
     } else {
       try {
-        await fetch("http://localhost:5001/api/chats", {
+        await fetch("https://chat-app-backend-qwq2.onrender.com/api/chats", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ firstName, lastName }),

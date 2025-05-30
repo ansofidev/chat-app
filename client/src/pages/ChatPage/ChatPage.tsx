@@ -66,7 +66,7 @@ const ChatPage = () => {
           onCancelEdit={() => setChatToEdit(null)}
           onSaveEdit={async (updatedChat) => {
             try {
-              await fetch(`http://localhost:5001/api/chats/${updatedChat._id}`, {
+              await fetch(`https://chat-app-backend-qwq2.onrender.com/api/chats/${updatedChat._id}`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",

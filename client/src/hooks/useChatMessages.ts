@@ -22,7 +22,7 @@ export const useChatMessages = ({ chat, onChatUpdate, showToast }: UseChatMessag
   const sendMessage = async (text: string, sender: "user" | "bot") => {
     try {
       await axios.post(
-        `http://localhost:5001/api/chats/${chat._id}/messages`,
+        `https://chat-app-backend-qwq2.onrender.com/api/chats/${chat._id}/messages`,
         { text, sender }
       );
 
@@ -40,7 +40,7 @@ export const useChatMessages = ({ chat, onChatUpdate, showToast }: UseChatMessag
 
   const sendBotReply = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/quotes/random");
+      const res = await axios.get("https://chat-app-backend-qwq2.onrender.com/api/quotes/random");
       const quote = res.data.content;
 
       await sendMessage(quote, "bot");
@@ -52,7 +52,7 @@ export const useChatMessages = ({ chat, onChatUpdate, showToast }: UseChatMessag
   const handleEditSave = async (messageId: string, newText: string) => {
     try {
       const res = await axios.patch(
-        `http://localhost:5001/api/chats/${chat._id}/messages/${messageId}`,
+        `https://chat-app-backend-qwq2.onrender.com/api/chats/${chat._id}/messages/${messageId}`,
         { text: newText }
       );
 
@@ -74,7 +74,7 @@ export const useChatMessages = ({ chat, onChatUpdate, showToast }: UseChatMessag
 
     try {
       const res = await axios.delete(
-        `http://localhost:5001/api/chats/${chat._id}/messages/${deletingMessageId}`
+        `https://chat-app-backend-qwq2.onrender.com/api/chats/${chat._id}/messages/${deletingMessageId}`
       );
 
       const updatedChat = res.data.chat || res.data;
