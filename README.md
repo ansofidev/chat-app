@@ -95,13 +95,6 @@ The backend must be run locally, or optionally deployed separately (e.g., to Ren
 
 ---
 
-## 📸 Screenshots
-
-- 🖼️ Chat List & Chat Window  
-- 🖊️ Message Edit / Delete UI  
-
----
-
 ## ✏️ Notes
 
 - Bot replies use a public quote API  
