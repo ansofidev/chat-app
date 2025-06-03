@@ -74,7 +74,8 @@ Then open: [http://localhost:3000](http://localhost:3000)
 The frontend is deployed on Vercel:  
 👉 https://chat-app-theta-one-46.vercel.app/
 
-The backend must be run locally, or optionally deployed separately (e.g., to Render, Railway, etc.).
+The backend is deployed on Render:  
+👉 https://chat-app-backend-qwq2.onrender.com
 
 ---
 
